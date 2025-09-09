@@ -144,7 +144,7 @@ async function showPlantDetail(id) {
     modal.innerHTML = `
       <form method="dialog" class="modal-box">
         <h3 class="text-lg font-bold">${plant.name}</h3>
-        <img src="${plant.image}" alt="${plant.name}" class="rounded-lg mt-3 w-full h-48 object-cover"/>
+        <img src="${plant.image}" alt="${plant.name}" class="rounded-lg mt-3 w-full h-60 object-cover"/>
         <p class="py-2 text-gray-600">${plant.description}</p>
         <p class="font-semibold">Category: ${plant.category}</p>
         <p class="mt-1 text-green-700 font-bold">Price: ৳${plant.price}</p>
@@ -223,7 +223,7 @@ async function loadDefaultPlants() {
   try {
     showSpinner(); // spinner
 
-    const defaultCategoryIds = [1, 2, 3]; 
+    const defaultCategoryIds = [5, 4, 6]; 
     let defaultPlants = [];
 
     for (const id of defaultCategoryIds) {
