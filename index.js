@@ -7,7 +7,7 @@ const cartTotal = document.getElementById("cart-total");
 
 let cart = [];
 
-// ✅ SPINNER UTILS যোগ করা হলো
+// SPINNER 
 function showSpinner() {
   plantContainer.innerHTML = `<div class="flex justify-center items-center h-40">
     <span class="loading loading-spinner text-accent"></span>
@@ -19,8 +19,8 @@ function hideSpinner() {
 }
 
 // Load Categories
-let currentActiveCategoryId = null; // globally track active category
-let categoryListData = []; // store categories globally
+let currentActiveCategoryId = null; 
+let categoryListData = []; 
 
 // Load Categories
 async function loadCategories() {
@@ -69,12 +69,12 @@ function getCategoryNameById(id) {
 // Load Plants by Category
 async function loadPlantsByCategory(id) {
   try {
-    showSpinner(); // ✅ spinner দেখাচ্ছে
+    showSpinner(); //spinner
 
     const res = await fetch(`${API_BASE}/category/${id}`);
     const data = await res.json();
 
-    hideSpinner(); // ✅ spinner hide হচ্ছে
+    hideSpinner(); //spinner hide
 
     console.log("Plants by Category:", data);
 
@@ -126,7 +126,7 @@ async function showPlantDetail(id) {
     const res = await fetch(`${API_BASE}/plant/${id}`);
     const data = await res.json();
 
-    const plant = data.plants; // API অনুযায়ী
+    const plant = data.plants; // API
 
     if (!plant) {
       alert("Plant details not found.");
@@ -164,7 +164,7 @@ async function showPlantDetail(id) {
   }
 }
 
-// -------------------- Cart Logic with Quantity --------------------
+// -------------------- Cart with Quantity --------------------
 
 // Add to Cart
 function addToCart(id, name, price) {
@@ -195,7 +195,7 @@ function renderCart() {
     const div = document.createElement("div");
     div.className = "flex justify-between items-center w-[280px] h-[65px] bg-[#F0FDF4] rounded-sm p-2 mx-auto mb-2";
 
-    // innerHTML দিয়ে content
+    // innerHTML content
     div.innerHTML = `
      <p class="font-semibold p-2">${item.name} <br>
       ৳${item.price} x ${item.quantity}</p>
